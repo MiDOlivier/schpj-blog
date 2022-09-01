@@ -1,0 +1,31 @@
+//MySQLi - MySQLimproved
+//CRUD - Create, Read, Update, Delete
+//$con = mysqli_connect("localhost", "root", "", "miguel_lima"); //conexão com o bd (local, user, pass, bd_name)
+//$sql = "SELECT img,ctgry_color,ctgry,title,body,author,date FROM post"; // comando pro query
+
+$res = mysqli_query($con, $sql); //faz o trampo, salva o bd em $res
+
+$res = mysqli_fetch_row($res); // colhe uma linha (ou linhas[x])
+$m = mysqli_fetch_all($res); // colhe todas as linhas (ou linhas[x])
+
+die(print_r($res[0])); //exibe o texto, die faz a ação e para (morre)
+
+$posts = getposts();
+
+
+
+
+
+
+
+/*<div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <p class="alert alert-danger text-center">Imagem</p>
+            </div>
+            <div class="col-md-6">
+                <p class="alert alert-primary text-left"><?= $_POST['img']?></p> // <= eh o mesmo que <?php echo
+            </div>
+        </div>
+    </div>
+    */
